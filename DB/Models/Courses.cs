@@ -26,5 +26,7 @@ namespace E_Learning.DB.Models
         public List<CourseSections> Sections { get; set; }
 
         public List<CoursesUsers> CoursesUsers { get; set; }
+
+        public DateTime? Deactivated_At { set; get; }
     }
 }

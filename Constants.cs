@@ -7,5 +7,13 @@
             Student,
             Teacher
         }
+
+        public enum HttpResponseEnum
+        {
+            Unauthorized,
+            BadRequest,
+            NotFound,
+            Ok
+        }
     }
 }

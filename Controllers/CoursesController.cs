@@ -83,10 +83,22 @@ namespace E_Learning.Controllers
         [HttpDelete("id/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var deleteCourseCommand = new DeleteCourse(id);
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var userRole = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+
+            if (userRole == Roles.Student.ToString())
+                return Unauthorized();
+
+            var deleteCourseCommand = new ActiveStatusSwitchCourse() { CourseId = id, UserId = int.Parse(userId) };
             var result = await _mediator.Send(deleteCourseCommand);
 
-            return result ? Ok() : NotFound();
+            if (result == HttpResponseEnum.NotFound)
+                return NotFound();
+
+            if (result == HttpResponseEnum.Unauthorized)
+                return Unauthorized();
+
+            return Ok();
         }
     }
 }
