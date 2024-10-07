@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using FluentValidation.Results;
 using System.Net;
 using System.Text.Json;
 
@@ -31,7 +32,8 @@ namespace E_Learning.ErrorHandling
 
         private Task HandleValidationExceptionAsync(HttpContext context, ValidationException ex)
         {
-            context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            context.Response.Clear();
+            context.Response.StatusCode = SetStatusCode(ex.Errors.FirstOrDefault());
             context.Response.ContentType = "application/json";
 
             var errors = ex.Errors.Select(e => new
@@ -42,6 +44,17 @@ namespace E_Learning.ErrorHandling
 
             var result = JsonSerializer.Serialize(new { Errors = errors });
             return context.Response.WriteAsync(result);
+        }
+
+        private int SetStatusCode(ValidationFailure validation)
+        {
+            if (validation.ErrorCode.Contains("not found"))
+                return StatusCodes.Status404NotFound;
+
+            if (validation.ErrorCode.Contains("unauthorized"))
+                return StatusCodes.Status401Unauthorized;
+
+            return StatusCodes.Status400BadRequest;
         }
 
         private Task HandleExceptionAsync(HttpContext context, Exception ex)

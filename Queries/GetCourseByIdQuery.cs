@@ -5,7 +5,7 @@ using E_Learning.Repository;
 using MediatR;
 using static E_Learning.Constants;
 
-namespace E_Learning.DBElements.Queries
+namespace E_Learning.Queries
 {
     public class GetCourseDetailsQuery : IRequest<CourseListItemDTO?>
     {
@@ -22,7 +22,7 @@ namespace E_Learning.DBElements.Queries
         public GetCourseByIdQueryHandler(ICoursesRepository corsesRepository, IMapper mapper)
         {
             this.corsesRepository = corsesRepository;
-            this._mapper = mapper;
+            _mapper = mapper;
         }
 
         public async Task<CourseListItemDTO?> Handle(GetCourseDetailsQuery request, CancellationToken cancellationToken)

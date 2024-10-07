@@ -3,7 +3,7 @@ using E_Learning.Repository;
 using MediatR;
 using Microsoft.AspNetCore.JsonPatch;
 
-namespace E_Learning.MediatorComponents.Commands
+namespace E_Learning.Commands
 {
     public class EditCourseSectionDescription : IRequest<bool>
     {

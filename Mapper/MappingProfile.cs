@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using E_Learning.DBElements.Commands;
 using E_Learning.DB.Models;
 using E_Learning.DTOs.Components;
 using E_Learning.DTOs.Responses;
 using E_Learning.DB.Models.AdminComponentsDTOs;
 using E_Learning.DTOs.AdminComponentsDTOs;
+using E_Learning.Commands;
 
 namespace E_Learning.Mapper
 {

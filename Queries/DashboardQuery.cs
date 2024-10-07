@@ -3,7 +3,7 @@ using E_Learning.Repository;
 using MediatR;
 using static E_Learning.Constants;
 
-namespace E_Learning.MediatorComponents.Queries
+namespace E_Learning.Queries
 {
     public class DashboardQuery : IRequest<DashboardDTO?>
     {
