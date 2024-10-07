@@ -2,7 +2,7 @@
 using E_Learning.Repository;
 using MediatR;
 
-namespace E_Learning.MediatorComponents.Commands
+namespace E_Learning.Commands
 {
     public class AddQuestion : IRequest<bool>
     {

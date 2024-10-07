@@ -1,4 +1,4 @@
-﻿using E_Learning.MiddleComponents.Queries;
+﻿using E_Learning.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;

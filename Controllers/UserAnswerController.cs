@@ -1,4 +1,4 @@
-﻿using E_Learning.DBElements.Commands;
+﻿using E_Learning.Commands;
 using E_Learning.DTOs.Responses;
 using E_Learning.MediatorComponents.Queries;
 using MediatR;

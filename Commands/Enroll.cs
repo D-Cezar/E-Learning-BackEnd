@@ -2,7 +2,7 @@
 using E_Learning.Repository;
 using MediatR;
 
-namespace E_Learning.MiddleComponents.Commands
+namespace E_Learning.Commands
 {
     public class Enroll : IRequest<bool>
     {

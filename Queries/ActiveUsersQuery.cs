@@ -3,7 +3,7 @@ using E_Learning.DB.Models.AdminComponentsDTOs;
 using E_Learning.Repository;
 using MediatR;
 
-namespace E_Learning.MediatorComponents.Queries
+namespace E_Learning.Queries
 {
     public class ActiveUsersQuery : IRequest<List<AdminUserContentDTO>>
     {

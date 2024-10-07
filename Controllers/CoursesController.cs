@@ -1,5 +1,5 @@
-﻿using E_Learning.DBElements.Queries;
-using E_Learning.MediatorComponents.Commands;
+﻿using E_Learning.Commands;
+using E_Learning.DBElements.Queries;
 using E_Learning.MediatorComponents.Queries;
 using E_Learning.MiddleComponents.Commands;
 using MediatR;

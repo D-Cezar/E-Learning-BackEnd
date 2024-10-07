@@ -1,4 +1,4 @@
-﻿using E_Learning.MediatorComponents.Commands;
+﻿using E_Learning.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

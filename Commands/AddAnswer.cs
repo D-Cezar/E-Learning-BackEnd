@@ -3,7 +3,7 @@ using E_Learning.DB.Models;
 using E_Learning.Repository;
 using MediatR;
 
-namespace E_Learning.DBElements.Commands
+namespace E_Learning.Commands
 {
     public class AddAnswer : IRequest<bool?>
     {

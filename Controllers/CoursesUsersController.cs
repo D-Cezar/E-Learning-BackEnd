@@ -1,8 +1,7 @@
-﻿using E_Learning.MiddleComponents.Commands;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using E_Learning.MediatorComponents.Commands;
+using E_Learning.Commands;
 
 namespace E_Learning.Controllers
 {
